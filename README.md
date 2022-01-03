@@ -1,4 +1,4 @@
-# データ構造化　ハンズオン演習 5
+# データ構造化　ハンズオン演習 5-2
 
 ## NMR編
 
@@ -21,7 +21,7 @@ JEOL製NMRのデータについて，jdx形式（テキスト）を起点とし�
 Google Colabでステップ・バイ・ステップで動作を確認しながら進めます．下記のボタンを押して進んでください．
 
 <div align="center">
-  <a href="https://colab.research.google.com/github/ARIM-Training/Training_Program_5/blob/main/Training_5.ipynb">
+  <a href="https://colab.research.google.com/github/ARIM-Training/Training_Program_5_2/blob/main/Training_5_2.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 </div>
