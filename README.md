@@ -2,16 +2,20 @@
 
 ## NMR編
 
-JEOL製NMRのデータについて，jdx形式（テキスト）を起点として，一次元NMRのデータ構造化およびスペクトル図を出力します．
+Bruker製NMRのデータについて一次元NMRのデータ構造化およびスペクトル図を出力します．
 
 **目　標**：　NMRの代表的な測定方法である１次元スペクトルの処理の流れを習得することを目指します．  
-**機　種**：　JEOL ECA-600  
-**データ**：　.jdx (テキスト形式)
+**機　種**：　Bruker AV-200 
+**データ**：　BrukerはフォルダーにFID, FFTデータが階層的に格納されます
+
+対応機種 ：　
+rawデータ：　BrukerはフォルダーにFID, FFTデータが階層的に格納されます．
+
 
 <br>
 <div align="center">  
 
-  ![133561268-a5aa2a2b-b075-4cb2-8213-d74750dff2af](https://user-images.githubusercontent.com/38028745/147712779-dc7f9e1c-d863-47ae-ace4-eaddcf9a3d14.png)
+
 
   
 </div>
