@@ -1,0 +1,93 @@
+# Mon Sep 28 08:03:18 2020
+#$$PROBEID=10
+#$$PROBEINFO=2.5 mm MAS BB/1H/19F H13229/0008
+#$$PICSINFO=H13229_0008_10.par
+#$$SHIMID=272623
+#
+# Active Shim Gradients
+#
+Z           		-102535         
+Z2          		0               
+Z3          		0               
+Z4          		0               
+Z5          		0               
+Z6          		0               
+X           		0               
+XZ          		0               
+XZ2         		0               
+XZ3         		0               
+XZ4         		0               
+Y           		0               
+YZ          		0               
+YZ2         		0               
+YZ3         		0               
+YZ4         		0               
+XY          		0               
+XYZ         		-250            
+XYZ2        		0               
+XYZ3        		0               
+(X2-Y2)     		-35300          
+(X2-Y2)Z    		0               
+(X2-Y2)Z2   		0               
+(X2-Y2)Z3   		0               
+X3          		0               
+X3Z         		0               
+Y3          		0               
+Y3Z         		0               
+#
+# Lock Parameter
+#
+FIELD		4485.000
+LOCKPHASE		214.900 
+LOCKPOWER		-60.000 
+LOCKGAIN		102.800 
+LOCKDC		-80.000 
+LOCKSHIFT		4.700   
+LOOPGAIN		-5.000  
+LOOPTIME		0.350   
+LOOPFILTER		100.000 
+#
+IEEE64_VERSION_CODE 1
+#
+# Shim currents 
+#
+SHIM_SETTING [1 ]  -25633.75000000 
+SHIM_SETTING [2 ]  0.00000000      
+SHIM_SETTING [3 ]  0.00000000      
+SHIM_SETTING [4 ]  3570.34600000   
+SHIM_SETTING [5 ]  -3569.95700000  
+SHIM_SETTING [6 ]  -787.34300000   
+SHIM_SETTING [7 ]  786.95600000    
+SHIM_SETTING [8 ]  60.60700000     
+SHIM_SETTING [9 ]  -62.12100000    
+SHIM_SETTING [10]  8315.56300000   
+SHIM_SETTING [11]  -8314.76900000  
+SHIM_SETTING [12]  0.00000000      
+SHIM_SETTING [13]  0.00000000      
+SHIM_SETTING [14]  0.00000000      
+SHIM_SETTING [15]  0.00000000      
+SHIM_SETTING [16]  0.00000000      
+SHIM_SETTING [17]  0.00000000      
+SHIM_SETTING [18]  0.00000000      
+SHIM_SETTING [19]  0.00000000      
+SHIM_SETTING [20]  0.00000000      
+SHIM_SETTING [21]  -5709.27000000  
+SHIM_SETTING [22]  -5709.27000000  
+SHIM_SETTING [23]  8825.00000000   
+SHIM_SETTING [24]  8825.00000000   
+SHIM_SETTING [25]  -3452.10700000  
+SHIM_SETTING [26]  -3452.10700000  
+SHIM_SETTING [27]  0.00000000      
+SHIM_SETTING [28]  0.00000000      
+SHIM_SETTING [29]  -13.96800000    
+SHIM_SETTING [30]  13.96800000     
+SHIM_SETTING [31]  0.00000000      
+SHIM_SETTING [32]  0.00000000      
+SHIM_SETTING [33]  -62.50000000    
+SHIM_SETTING [34]  62.50000000     
+SHIM_SETTING [35]  44.05700000     
+SHIM_SETTING [36]  -44.05700000    
+SHIM_SETTING [37]  0.00000000      
+SHIM_SETTING [38]  0.00000000      
+SHIM_SETTING [39]  0.00000000      
+SHIM_SETTING [40]  0.00000000      

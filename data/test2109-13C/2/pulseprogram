@@ -1,0 +1,68 @@
+# 1 "C:/Bruker/TOPSPIN/exp/stan/nmr/lists/pp/hpdec.av"
+;hpdec.av
+;acquisition on X with hp proton decoupling
+;suitable for various types of decoupling
+
+;set:
+;d1 : recycle delay
+;d30 : =1s/cnst31-p4, for pidec12 and pidec13, pi-pulse decoupling
+;d31 : =1s/cnst31, 1 rotor period
+;p1 : X 90 degree pulse
+;p5 : LG 360 degree pulse
+;p6 : =p5-0.4u
+;p10 : pulse length for phase modulated pulses (e.g PMLG, DUMBO)
+;p20 : =p21-0.4u
+;p21 : H 90 at power level pl13 (BLEW12)
+;p22 : H 180 at power level pl13 (pidec)
+;p29 : 5 - 10 us, to avoid exact rotor synchronisation
+;p30 : =p31-0.4u	-> calculated pulse for cpd
+;p31 : pulse length in decoupling sequence
+;pl1 : X power level for excitation pulse
+;pl2 : =119 dB, not used
+;pl12 : power level for standard proton decoupling 
+;pl13 : e.g. used in tppm13, pidec13, cw13, pidec13, cwlg, cwlgs
+;spnam1	: lgs-1, lgs-4 or pmlg-36,
+;l31 : number of rotor cycles for XiX (=3)
+;cnst20 : proton RF field to calculate LG parameters
+;cnst21 : =0, proton offset
+;cnst22 : +ve Lee-Goldburg offset
+;cnst23 : -ve Lee-Goldburg offset
+;cnst24 : additional Lee-Goldburg offset
+;cnst31 : spinning frequency
+;cpdprg2 : sequence used for decoupling (tppm15, cw, etc.)
+;ZGPTNS : options for zg must be blew12, xix, pidec, lg, or tppm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 ze			;set RCU to replace mode
+2 d1 do:f2			;recycle delay
+  (p1 ph1):f1		;transmitter pulse on F1 with power level pl1
+  1u cpds2:f2		;use cpdprg2 cw or tppm at power pl12
+  go=2 ph31	;make sure the adc is finished, turn decoupling off
+  1m do:f2
+  wr #0			;save data in current data set
+exit
+ph0= 0			;constant phase for acquisition
+ph1= 0 1 2 3		;simple pulse phase list
+ph31=0 1 2 3 		;signal routing corresponds to pulse phase list
+
+
+

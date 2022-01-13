@@ -1,0 +1,88 @@
+# 1 "C:/Bruker/TOPSPIN/exp/stan/nmr/lists/pp/cp.av"
+;cp.av basic cp experiment
+;written by HF 1.3.2001
+;changed by JOS 05/06/03
+;set: p3 proton 90 at power level pl12
+;p15 contact time at pl1 (f1) and pl2 (f2)
+;cpdprg2 cw, tppm (at pl12), or lgs, cwlg. cwlgs (LG-decoupling 
+;here pl13 is used instead of pl12)
+
+prosol relations=<solids_cp>
+
+# 1 "C:/Bruker/TOPSPIN/exp/stan/nmr/lists/pp/lgcalc.incl" 1
+"cnst21=0"			;make sure cp ist done with proton freq.
+				;set by O2
+"cnst22=cnst20/sqrt(2)+cnst24"		;cnst20=desired RF field in Hz
+"cnst23=-cnst20/sqrt(2)+cnst24"	;negative offset is cnst23
+
+"p5=((294/360)/(cnst20))*1e6"		;calculate 294 degree pulse from cnst20
+"p6=p5-.4u"				;calculate correction for cpd=cwlgs
+
+# 11 "C:/Bruker/TOPSPIN/exp/stan/nmr/lists/pp/cp.av" 2
+
+;cnst20=RF field achieved at pl13
+;cnst24:additional LG-offset
+# 1 "C:/Bruker/TOPSPIN/exp/stan/nmr/lists/pp/trigg.incl" 1
+
+
+
+
+
+# 14 "C:/Bruker/TOPSPIN/exp/stan/nmr/lists/pp/cp.av" 2
+
+			;10 usec trigger pulse at TCU connector I cable 6
+# 1 "C:/Bruker/TOPSPIN/exp/stan/nmr/lists/pp/tppm.incl" 1
+"p30=p31-0.4u"				;calculate correction for cpd=tppm
+
+# 16 "C:/Bruker/TOPSPIN/exp/stan/nmr/lists/pp/cp.av" 2
+
+
+
+
+1 ze			;accumulate into an empty memory
+
+2 d1 do:f2		;recycle delay, decoupler off in go-loop
+# 1 "C:/Bruker/TOPSPIN/exp/stan/nmr/lists/pp/prp15.prot" 1
+;prp15.prot
+
+; Test the rf on-time and duty cycle
+;protect against too long contact time
+1m
+if "p15<10.1m" goto Passp15
+print "contact time exceeds 10msec limit!"
+goto HaltAcqu
+Passp15, 1m
+
+
+
+# 23 "C:/Bruker/TOPSPIN/exp/stan/nmr/lists/pp/cp.av" 2
+
+			;make sure p15 does not exceed 10 msec	
+			;let supervisor change this pulseprogram if 
+			;more is needed
+# 35 "C:/Bruker/TOPSPIN/exp/stan/nmr/lists/pp/cp.av"
+
+
+  1u fq=cnst21:f2
+  10u pl12:f2 pl1:f1	;preselect pl12 drive power for F2, pl1 for F1
+  6u setnmr4|31 \n 4u  setnmr4^31			;trigger for scope, 10 usec
+  p3:f2 ph1		;proton 90 pulse
+  0.3u
+  (p15 ph2):f1 (p15:spf0 pl2 ph10):f2 	;contact pulse with square or ramp
+  
+  1u cpds2:f2 		;pl12 is used here with tppm, pl13 with cwlg, cwlgs
+  
+  go=2 ph31  		;select appropriate decoupling sequence, cw or
+			;tppm, both executed at power level 12, or lgs
+			;executed at power level pl13
+  1m do:f2		;decoupler off
+  wr #0			;save data to disk
+HaltAcqu, 1m		;jump address for protection files
+exit			;quit
+
+ph0= 0
+ph1= 1 3
+ph2= 0 0 2 2 1 1 3 3
+ph10= 0
+ph31= 0 2 2 0 1 3 3 1
+
